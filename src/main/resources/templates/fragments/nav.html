@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="sidebar(activePage)" class="sidebar p-3">
+    <div class="brand-mark fs-4 mb-4">TeleChurn AI</div>
+    <a th:classappend="${activePage == 'dashboard'} ? 'active' : ''" href="/dashboard">Dashboard</a>
+    <a th:classappend="${activePage == 'customers'} ? 'active' : ''" href="/customers">Customers</a>
+    <a th:classappend="${activePage == 'churn-analysis'} ? 'active' : ''" href="/churn-analysis">Churn Analytics</a>
+    <a th:classappend="${activePage == 'churn-drivers'} ? 'active' : ''" href="/churn-drivers">Churn Drivers</a>
+    <a th:classappend="${activePage == 'personas'} ? 'active' : ''" href="/personas">Personas</a>
+    <a th:classappend="${activePage == 'prediction'} ? 'active' : ''" href="/prediction">Churn Prediction</a>
+    <a th:classappend="${activePage == 'model-performance'} ? 'active' : ''" href="/model-performance">Model Performance</a>
+    <a th:classappend="${activePage == 'reports'} ? 'active' : ''" href="/reports">Reports</a>
+    <a th:classappend="${activePage == 'profile'} ? 'active' : ''" href="/profile">Profile</a>
+    <form th:action="@{/logout}" method="post" class="mt-3">
+        <button class="btn btn-outline-light w-100" type="submit">Logout</button>
+    </form>
+</div>
+
+<div th:fragment="topbar(title, subtitle)" class="topbar px-4 py-3 d-flex align-items-center justify-content-between">
+    <div>
+        <h1 class="h4 mb-1" th:text="${title}">Title</h1>
+        <div class="text-muted" th:text="${subtitle}">Subtitle</div>
+    </div>
+</div>
+</body>
+</html>

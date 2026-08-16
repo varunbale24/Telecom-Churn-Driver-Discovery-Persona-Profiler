@@ -1,0 +1,100 @@
+:root {
+    --navy: #0f2747;
+    --navy-2: #17365f;
+    --cyan: #18a0fb;
+    --bg: #f5f7fb;
+    --text: #1c2430;
+    --muted: #6f7a8a;
+    --border: #dbe3ef;
+    --success: #15803d;
+    --warning: #d97706;
+    --danger: #dc2626;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", sans-serif;
+}
+
+.sidebar {
+    background: linear-gradient(180deg, var(--navy), #0b1c33);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.sidebar a {
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+    display: block;
+    padding: .85rem 1rem;
+    border-radius: .7rem;
+    margin-bottom: .35rem;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: rgba(24,160,251,.16);
+    color: #fff;
+}
+
+.brand-mark {
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.page-shell {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+}
+
+.main-panel {
+    min-height: 100vh;
+}
+
+.topbar {
+    background: rgba(255,255,255,.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.card-soft {
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 30px rgba(15, 39, 71, .06);
+    border-radius: 1rem;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.badge-risk-high { background: #fee2e2; color: var(--danger); }
+.badge-risk-medium { background: #ffedd5; color: var(--warning); }
+.badge-risk-low { background: #dcfce7; color: var(--success); }
+
+.login-wrap {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, rgba(24,160,251,.12), transparent 28%), linear-gradient(180deg, #eef4fb, #f8fbff);
+}
+
+.login-card {
+    border-radius: 1.4rem;
+    overflow: hidden;
+    box-shadow: 0 18px 55px rgba(15, 39, 71, .12);
+}
+
+.hero-panel {
+    background: linear-gradient(135deg, var(--navy), var(--navy-2));
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .page-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        min-height: auto;
+    }
+}
